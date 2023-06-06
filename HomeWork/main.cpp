@@ -1,3 +1,4 @@
+#pragma execution_character_set("1251")
 #include <fstream>      
 #include <string>       
 #include <iostream>
