@@ -7,30 +7,30 @@ using namespace std;
 int main() {
 	setlocale(LC_ALL, "rus");
 
-	string s = "кругу";
-	string line; // строка из файла
+	string s = "РєСЂСѓРіСѓ";
+	string line; // СЃС‚СЂРѕРєР° РёР· С„Р°Р№Р»Р°
 	string fileName = "file.txt";
 	int lineNum = 0;
 	bool found = false;
 
 	ifstream file(fileName);
 	if (file.is_open()) {
-		cout << "\t\t|Файл открыт|" << endl;
-		cout << "Слова для поиска: \"" << s << "\"" << endl;
+		cout << "\t\t|Р¤Р°Р№Р» РѕС‚РєСЂС‹С‚|" << endl;
+		cout << "РЎР»РѕРІР° РґР»СЏ РїРѕРёСЃРєР°: \"" << s << "\"" << endl;
 		while (getline(file, line)) {
 			lineNum++;
 			if (line.find(s) != string::npos) {
-				cout << "Номер строки: " << lineNum << "  \| " << line << endl;
+				cout << "РќРѕРјРµСЂ СЃС‚СЂРѕРєРё: " << lineNum << "  \| " << line << endl;
 				found = true;
 			}
 		}
 		file.close();
 		if (!found) {
-			cout << "По результату \" " << s << " \" ничего не найдено." << endl;
+			cout << "РџРѕ СЂРµР·СѓР»СЊС‚Р°С‚Сѓ \" " << s << " \" РЅРёС‡РµРіРѕ РЅРµ РЅР°Р№РґРµРЅРѕ." << endl;
 		}
 	}
-	else if (!file.is_open()) cout << "\t|Не удалось открыть файл|" << endl;
-	else cout << "\t\t|Файл закрыт|" << endl;
+	else if (!file.is_open()) cout << "\t|РќРµ СѓРґР°Р»РѕСЃСЊ РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р»|" << endl;
+	else cout << "\t\t|Р¤Р°Р№Р» Р·Р°РєСЂС‹С‚|" << endl;
 
 	return 0;
 }
